@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    
+        {% if album.title %}
+           <h1>{{ album.title}}</h1>
+            
+        {% endif %}
+        <h3>Autor: {{ album.author.name}} <br>
+            Gatunek: {{album.genre}} <br>
+            Rok wydania: {{album.year_released}} <br>
+      	</h3>
+      	<p>{{album.info}}</p>
+
+
+        <form action="" method="post">
+            {% csrf_token %}
+        {% for item in items %}
+    
+        <div class="panel panel-info">
+            Stan: {{item.condition}} &nbsp;
+            Nośnik: {{item.carrier}} &nbsp;
+            Cena: {{item.price}} zł
+
+            
+
+                <p><input type="submit" name="{{item.id}}" value="Dodaj do koszyka" class="btn btn-primary btn-sm"/></p>
+        </div>
+            
+                
+        {% endfor %}
+        </form>
+</div>
+
+{% endblock %}

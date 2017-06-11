@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block css %}
+	{% load staticfiles %} 
+	<link rel="stylesheet" href="{% static "css/list.css" %}" />
+{%endblock%}
+
+{% block main_content %}
+
+<section>
+ 	 
+<h2>Produkty spełniające kryteria wyszukiwania:</h2>
+
+{%for album in albums %}
+
+<h3>{{album.author.name}}duda{{album.genre}}</h3>
+<hr>
+{% endfor  %} 
+
+</section>
+
+{%endblock%}
+

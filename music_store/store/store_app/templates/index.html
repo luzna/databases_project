@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+
+    <div class="jumbotron">
+      <form type="get" action="." style="margin: 0">
+      <input  id="search_box" type="text" name="search_box"  placeholder="Szukaj..." >
+      <button id="search_submit" type="submit" >Szukaj</button>
+      </form>
+      
+      <h3>Produkty spełniające kryteria wyszukiwania:</h3>
+      
+      <table class="table table-striped table-hover ">
+  <thead>
+    <tr class="warning">
+      <th>Tytuł: </th>
+      <th>Autor: </th>
+      <th>Gatunek: </th>
+      <th>Rok wydania: </th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for album in albums %}   
+    <tr>
+      <td><a href="/album/{{album.id}}">{{ album.title }}</a> </td>
+      <td>{{album.author.name}}</td>
+      <td>{{album.genre}}</td>
+      <td>{{album.year_released}}</td>
+      
+    </tr>
+    {% endfor  %}
+  </tbody>
+</table>
+
+      
+      
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+ 
