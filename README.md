@@ -1,6 +1,7 @@
 # databases_project
 
-This repository contains simple project for managing online music store for University subject: databases.
+This repository contains simple project in Django for managing online music store for University subject: databases.
+
 Implemented functionalities:
 - user authentication
 - products card
